@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="application.css" />
+  </head>
+  <body>
+    <h1>Books</h1>
+     <%= form_with model: Book.new do |f| %>
+    <thead>Title</thead>
+    <thead>Body</thead>
+    <h2>New Book</h2>
+   <p>Title</p>
+     <%= f.text_field :title %>
+   <p>Body</p>
+     <%= f.text_area :body %>
+     <%= f.submit %>
+   <% end %>
+  </body>
+</html>
