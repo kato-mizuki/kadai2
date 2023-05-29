@@ -5,9 +5,15 @@
   </head>
   <body>
     <h1>Books</h1>
-     <%= form_with model: Book.new do |f| %>
-    <thead>Title</thead>
-    <thead>Body</thead>
+     <%= @book.each do |book| %>
+    
+    <span><%= link_to book.title, "/books/:id" %></span>
+    <span><%= link_to book.body, "/books/:id" %></span>
+    <span><%= link_to "Show", "/books/:id" %></span>
+    <span><%= link_to "Edit", "/books/:id/edit" %></span>
+    <span><%= link_to "Destroy", "/books/:id" %></span>
+    <% end %>
+    <%= form_with model: Book.new do |f| %>
     <h2>New Book</h2>
    <p>Title</p>
      <%= f.text_field :title %>
